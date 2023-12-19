@@ -7,11 +7,16 @@ import { AdminModule } from './admin/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PublicModule } from './public/public.module';
+import { HeaderComponent } from './shared/header/header.component';
+import { MatIconModule } from '@angular/material/icon';
+import { NavComponent } from './shared/nav/nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +24,8 @@ import { PublicModule } from './public/public.module';
     AdminModule,
     BrowserAnimationsModule,
     NgbModule,
-    PublicModule
+    PublicModule,
+    MatIconModule
     
   ],
   providers: [],
