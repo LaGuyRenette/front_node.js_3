@@ -1,20 +1,9 @@
 <nav>
-<h3>Nos Étagères</h3>
 <h4>Categories</h4>
-<p>Armoire</p>
-<p>Étagère</p>
-<h4>Materiaux</h4>
-<!-- <h5>Fer</h5>
-<p>Inox</p>
-<p>Acier</p>
-<p>Aluminium</p>
-<h5>Bois</h5>
-<p>Frêne</p>
-<p>Noyer</p>
-<p>Chêne</p>
-<h5>Plastique</h5>
-<p>plastique</p> -->
+<p (click)="goToListFurniture('Cupboard')">Armoire</p>
+<p (click)="goToListFurniture('Shelf')">Étagère</p>
+<h4 (click)="goToMaterials()">Materiaux</h4>
 <h4 (click)="goToDashboard()">Dashboard</h4>
-<p><mat-icon (click)="goToLoginPage()">person</mat-icon>Login</p>
+<p><mat-icon (click)="goToLoginPage()">person</mat-icon>Logout</p>
 <p><mat-icon (click)="goToCrudPage()">add</mat-icon>Mobilier</p>
 </nav>

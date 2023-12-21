@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+h3 {
+    font-family: Roboto;
+    font-size: 39px;
+    font-weight: 700;
+}
+
+h4 {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h5 {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+p {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap'

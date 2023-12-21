@@ -1,0 +1,140 @@
+@import 'variables.scss';
+
+@mixin set-color($c) {
+	color: map-get($colors, $c);
+}
+
+@mixin background-color($c) {
+	background-color: map-get($colors, $c);
+}
+
+@mixin button($t,$c) {
+	@if $t == 'outline' {
+		border: solid;
+		border-color: map-get($colors, $c);
+		border-radius: .375rem;
+		background-color: transparent;
+		color: map-get($colors, $c);
+		width: fit-content;
+		padding: .375rem .75rem;
+		font-weight: 400;
+		line-height: 1;
+		text-align: center;
+		text-decoration: none;
+		filter: saturate(100%);
+	}
+	@else {
+		border: solid;
+		border-color: map-get($colors, $c);
+		border-radius: .375rem;
+		background-color: map-get($colors, $c);
+		color: map-get($colors, 'white');
+		width: fit-content;
+		padding: .375rem .75rem;
+		font-weight: 400;
+		line-height: 1;
+		text-align: center;
+		text-decoration: none;
+		filter: saturate(100%);
+	}
+}
+
+@mixin titles($v) {
+	@if $v == 1 {
+		margin-bottom: 50px;
+		font-family: 'SFTSchrifted-Regular';
+		font-size: 30px;
+	}
+	@if $v == 2 {
+		margin-bottom: 35px;
+		font-family: 'SFTSchrifted-Regular';
+		font-size: 28px;
+	}
+	@if $v == 3 {
+		margin-bottom: 25px;
+		font-family: 'SFTSchrifted-Regular';
+		font-size: 24px;
+	}
+	@if $v == 4 {
+		margin-bottom: 20px;
+		font-family: 'SFTSchrifted-Regular';
+		font-size: 20px;
+	}
+	@if $v == 5 {
+		margin-bottom: 18px;
+		font-family: 'SFTScrhifted-Regular';
+		font-size: 18px;
+	}
+}
+
+@mixin padding-values($p, $v) {
+	@if $p == 'all' {
+		padding: map-get($widths-rem, $v);
+	}
+	@else if $p == 't' {
+		padding-top: map-get($widths-rem, $v);
+	}
+	@else if $p == 'b' {
+		padding-bottom: map-get($widths-rem, $v);
+	}
+	@else if $p == 's' {
+		padding-left: map-get($widths-rem, $v);
+	}
+	@else if $p == 'e' {
+		padding-right: map-get($widths-rem, $v);
+	}
+	@else if $p == 'y' {
+		padding-top: map-get($widths-rem, $v);
+		padding-bottom: map-get($widths-rem, $v);
+	}
+	@else if $p == 'x' {
+		padding-left: map-get($widths-rem, $v);
+		padding-right: map-get($widths-rem, $v);
+	}
+}
+
+
+@mixin margin-values($p, $v) {
+	@if $p == 'all' {
+		margin: map-get($widths-rem, $v);
+	}
+	@else if $p == 't' {
+		margin-top: map-get($widths-rem, $v);
+	}
+	@else if $p == 'b' {
+		margin-bottom: map-get($widths-rem, $v);
+	}
+	@else if $p == 's' {
+		margin-left: map-get($widths-rem, $v);
+	}
+	@else if $p == 'e' {
+		margin-right: map-get($widths-rem, $v);
+	}
+	@else if $p == 'y' {
+		margin-top: map-get($widths-rem, $v);
+		margin-bottom: map-get($widths-rem, $v);
+	}
+	@else if $p == 'x' {
+		margin-left: map-get($widths-rem, $v);
+		margin-right: map-get($widths-rem, $v);
+	}
+}
+
+
+@mixin border-width($v, $side: all) {
+	@if $side == 'left' {
+		border-left: solid map-get($widths-px, $v);
+	}
+	@else if $side == 'right' {
+		border-right: solid map-get($widths-px, $v);
+	}
+	@else if $side == 'top' {
+		border-top:solid map-get($widths-px, $v);
+	}
+	@else if $side == 'bottom' {
+		border-bottom: solid map-get($widths-px, $v);
+	}
+	@else if $side == 'all' {
+		border: solid map-get($widths-px, $v);
+	}
+}

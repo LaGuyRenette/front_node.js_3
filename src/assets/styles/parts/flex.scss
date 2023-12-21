@@ -1,0 +1,157 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.column {
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;;
+	@for $i from 1 through 12 {
+		&-#{$i} {
+			flex: 0 0 percentage($i / 12);
+			max-width: percentage($i / 12);
+		}
+	}
+}
+
+.gap {
+	&-lg {
+		gap: 3rem;
+	}
+	&-md {
+		gap: 1.5rem;
+	}
+	&-sm {
+		gap: .75rem;
+	}
+	&-xs {
+		gap: .35rem;
+	}
+	&-row {
+		&-lg {
+			row-gap: 3rem;
+		}
+		&-md {
+			row-gap: 1.5rem;
+		}
+		&-sm {
+			row-gap: .75rem;
+		}
+		&-xs {
+			row-gap: .35rem;
+		}
+	}
+	&-col {
+		&-lg {
+			column-gap: 3rem;
+		}
+		&-md {
+			column-gap: 1.5rem;
+		}
+		&-sm {
+			column-gap: .75rem;
+		}
+		&-xs {
+			column-gap: .35rem;
+		}
+	}
+}
+
+.justify-content {
+	&-center {
+		justify-content: center;
+	}
+	&-evenly {
+		justify-content: space-evenly;
+	}
+	&-between {
+		justify-content: space-between;
+	}
+	&-stretch {
+		justify-content: stretch;
+	}
+}
+
+.align-self {
+	&-start {
+		align-self: start;
+	}
+	&-center {
+		align-self: center;
+	}
+	&-end {
+		align-self: end;
+	}
+}
+
+.flex {
+	&-row {
+		&-s {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: flex-start;
+		}
+		&-c {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+		}
+		&-e {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: flex-end;
+		}
+	}
+	&-row-r {
+		&-s {
+			display: flex;
+			flex-direction: row-reverse;
+			flex-wrap: wrap;
+			align-items: flex-start;
+		}
+		&-c {
+			display: flex;
+			flex-direction: row-reverse;
+			flex-wrap: wrap;
+			align-items: center;
+		}
+		&-e {
+			display: flex;
+			flex-direction: row-reverse;
+			flex-wrap: wrap;
+			align-items: flex-end;
+		}
+	}
+	&-col {
+		&-s {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			flex-direction: column;
+		}
+		&-c {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			flex-direction: column;
+		}
+		&-e {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-end;
+			flex-direction: column;
+		}
+	}
+}
+
+
+
+.row-column {
+	@for $i from 1 through 12 {
+		&-#{$i} {
+			flex: 1 1 percentage($i / 12);
+		}
+	}
+}

@@ -1,0 +1,41 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+
+.color {
+	@each $c, $color in $colors {
+		&-#{$c} {
+			@include set-color("#{$c}");
+		}
+	}
+}
+
+.h {
+	@for $i from 1 through 5 {
+		&-#{$i} {
+			@include titles($i);
+		}
+	}
+}
+
+.text {
+	&-italic {
+		font-style: italic;
+	}
+	&-bold {
+		font-weight: 600;
+	}
+	&-underline {
+		text-decoration: underline;
+	}
+	@each $side in $sides {
+		&-#{$side} {
+			text-align: #{$side};
+		}
+	}
+	@for $i from 1 through 5 {
+		&-size-#{$i} {
+			font-size: #{$i}rem;
+		}
+	}
+}

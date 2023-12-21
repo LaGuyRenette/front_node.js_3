@@ -1,0 +1,62 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.card {
+	&-full {
+		position: relative;
+		display: flex;
+		flex-direction :column;
+		min-width: 96vw;
+		min-height: fit-content;
+		word-wrap: normal;
+		background-color: map-get($colors, "fade-white");
+		background-clip: border-box;
+	}
+	&-lg {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-width: 75vw;
+		min-height: fit-content;
+		word-wrap: normal;
+		background-color: map-get($colors, "fade-white");
+		background-clip: border-box;
+	}
+	&-md {
+		min-width: 50vw;
+		min-height: fit-content;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		word-wrap: normal;
+		background-color: map-get($colors, "fade-white");
+		background-clip: border-box;
+	}
+	&-sm {
+		min-width: 30vw;
+		min-height: fit-content;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		word-wrap: normal;
+		background-color: map-get($colors, "fade-white");
+		background-clip: border-box;
+	}
+	&-float {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
+		&-background {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 5;
+			background-color: map-get($colors, "dark");
+			opacity: .2;
+		}
+	}
+}

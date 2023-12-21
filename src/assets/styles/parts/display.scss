@@ -1,0 +1,91 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.container {
+	height: 90vh;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 0 auto;
+	width: 100vw;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.display {
+	@each $display in $displays {
+		&-#{$display} {
+			display: $display;
+		}
+	}
+}
+
+.mar {
+	@each $width-key, $width-value in $widths-rem {
+		&-#{$width-key} {
+			@include margin-values("all", $width-key);
+		}
+
+		@each $direction in $directions {
+			&-#{$direction}-#{$width-key} {
+				@include margin-values($direction, $width-key)
+			}
+		}
+	}
+}
+
+.overflow {
+	@each $overflow in $overflows {
+		&-#{$overflow} {
+			overflow: #{$overflow};
+		}
+	}
+}
+
+.pad {
+	@each $width-key, $width-value in $widths-rem {
+		&-#{$width-key} {
+			@include padding-values("all", $width-key);
+		}
+
+		@each $direction in $directions {
+			&-#{$direction}-#{$width-key} {
+				@include padding-values($direction, $width-key)
+			}
+		}
+	}
+}
+
+.pos {
+	@each $position in $positions {
+		&-#{$position} {
+			position: #{$position};
+			&-extends {
+				position: #{$position};
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+}
+
+@each $location in $locations {
+	@for $i from 0 through 100 {
+		.#{$location} {
+			&-#{$i} {
+				@if $location == "top" or $location == "bottom" {
+					#{$location}: #{$i}vh;
+				}
+				@else if $location == "left" or $location == "right" {
+					#{$location}: #{$i}vw;
+				}
+			}
+		}
+	}
+}

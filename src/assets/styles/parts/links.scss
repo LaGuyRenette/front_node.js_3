@@ -1,0 +1,24 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.link {
+	text-decoration: none;
+	//display: block;
+	color: map-get($colors, dark-grey);
+	&-underline {
+		text-decoration: underline;
+	}
+}
+
+.link:focus,
+.link:hover,
+.link-underline:focus,
+.link-underline:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.link:disabled {
+	pointer-events: none;
+	cursor: not-allowed;
+}

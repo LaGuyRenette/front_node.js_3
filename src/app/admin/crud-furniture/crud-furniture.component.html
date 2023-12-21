@@ -1,1 +1,85 @@
-<p>crud-furniture works!</p>
+<h3>Créer ou Modifier un meuble</h3>
+<form  [formGroup]="furnitureForm" (ngSubmit)="onSubmit()">
+<div class="add-furniture-form">
+    <div>
+        <label for="name">Nom du meuble</label>
+        <input type="text" id="name" formControlName="name" required>
+    </div>
+
+    <div>
+        <label for="category">Type</label>
+        <select formControlName="category" required>
+          <option value="shelf">Étagère</option>
+          <option value="cupboard">Armoire</option>
+        </select>
+      </div>
+
+    <div>
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" required></textarea>
+    </div>
+
+    <div>
+        <label for="pictures">Importer une image</label>
+        <input type="file" id="pictures" formControlName="pictures" required>
+    </div>
+
+    <div>
+        <label for="price">Prix</label>
+        <input type="number" id="price" formControlName="price" required>
+    </div>
+
+    <div>
+        <label for="quantity">Quantité à produire</label>
+        <input type="number" id="quantity" formControlName="quantity" required>
+    </div>
+
+    <div formArrayName="materials">
+        <ng-container *ngFor="let materialForm of materials.controls; let i = index">
+          <h3>Matériaux {{ i + 1 }}</h3>
+          <ng-container [formGroupName]="i">
+            <div>
+              <label for="name">Nom du Matériaux</label>
+              <input type="text" formControlName="name" required>
+            </div>
+
+            <!-- NO NEED TO DO THAT EXCEPT FOR THE PUT METHOD: AND THE BEGINING TO CREATE THE CONTENT OF THE DIFERENT LABELS -->
+            <!-- <div>
+                <label for="category">Type de matière</label>
+                <select formControlName="category" requiredS
+                  <option value="plastique">Plastique</option>
+                  <option value="metal">Métal</option>
+                  <option value="bois">Bois</option>
+                </select>
+              </div>
+
+            <div>
+                <label for="provider">Fournisseur</label>
+                <select formControlName="provider" required>
+                  <option value="BBois">BBois</option>
+                  <option value="MetaLo">MetaLo</option>
+                  <option value="pPlastique">pPlastique</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="description">Description</label>
+                <textarea id="description" formControlName="description" required></textarea>
+            </div> -->
+
+            <div>
+                <label for="quantity">Prix</label>
+                <input type="number" id="quantity" formControlName="quantity" required>
+            </div>
+
+            <button type="button" (click)="deleteMaterial(i)">-</button>
+          </ng-container>
+        </ng-container>
+      </div>
+    
+      <button type="button" (click)="addMaterials()">+</button>
+
+    
+      <button type="submit">OK</button>
+    </div>
+</form>

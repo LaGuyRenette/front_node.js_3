@@ -1,0 +1,7 @@
+@function adjust-saturation($color, $percentage) {
+	@return adjust-color($color, $saturation: $percentage);
+}
+
+@function darken-color($color, $percentage) {
+	@return darken($color, $percentage);
+}

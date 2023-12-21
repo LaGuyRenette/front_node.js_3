@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 export interface FurnitureElement {
   name: string;
   quantity_material: number;
@@ -20,13 +21,13 @@ const FURNITURE: FurnitureElement[] = [
 ];
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
-  
+  selector: 'app-detail-material',
+  templateUrl: './detail-material.component.html',
+  styleUrls: ['./detail-material.component.scss']
 })
-export class DashboardComponent {
- 
+export class DetailMaterialComponent {
+
+
   displayedColumns: string[] = ['name', 'quantity_material', 'price_material', 'quantity_furniture', 'price_furniture', 'date'];
   dataSource = FURNITURE;
 

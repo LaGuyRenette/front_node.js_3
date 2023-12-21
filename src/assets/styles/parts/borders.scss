@@ -1,0 +1,25 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.border {
+	@each $width-key, $width-value in $widths-px {
+		&-#{$width-key} {
+			@include border-width($width-key);
+		}
+
+		&-round-#{$width-key} {
+			@include border-width($width-key);
+			border-radius: 0.375rem;
+		}
+
+		@each $side in $locations {
+			&-#{$side}-#{$width-key} {
+				@include border-width($width-key, $side)
+			}
+			&-#{$side}-round-#{$width-key} {
+				@include border-width($width-key, $side);
+				border-radius: 0.375rem;
+			}
+		}
+	}
+}

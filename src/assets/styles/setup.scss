@@ -1,0 +1,31 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  background-color: #ede9e6;
+  font-family: "Inter";
+}
+
+@font-face {
+  font-family: 'SFTSchrifted-Regular';
+  src: url(./fonts/SFTSchrifted-Regular.woff) format('woff');
+}
+  
+@font-face {
+  font-family: 'SFTSchrifted-Medium';
+  src: url(./fonts/SFTSchrifted-Medium.woff) format('woff');
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(./fonts/Inter-Regular.ttf);
+}
+

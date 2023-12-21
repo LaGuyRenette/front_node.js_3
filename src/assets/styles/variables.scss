@@ -1,0 +1,118 @@
+$box-sizings: (
+	"border-box",
+	"content-box",
+	"inherit",
+	"initial",
+	"revert",
+	"revert-layer",
+	"unset",
+);
+
+$colors: (
+	"grey": #AAAAAA,
+	"middle-blue": #F4F8FD,
+	"yellow": #FABC1C,
+	"green": #6EC667,
+	"orange": #E95615,
+	"pink": #f4a09f,
+	"red": #FF0200,
+	"light-orange": #F79767,
+	"blue":  #5A6F8D,
+	"light-grey": #D9D9D9,
+	"dark-grey": #4c4e52,
+	"dark": #212529,
+	"white": #ffffff,
+	"fade-white": #f5f5f5,
+);
+
+$directions: (
+	"t",
+	"b",
+	"s",
+	"e",
+	"y",
+	"x",
+);
+
+$displays: (
+	inline,
+	inline-block,
+	block,
+	grid,
+	table,
+	table-row,
+	table-cell,
+	flex,
+	inline-flex,
+	none,
+);
+
+$list-styles: (
+	"disc",
+	"circle",
+	"square",
+	"decimal",
+	"georgian",
+	"trad-chinese-informal",
+	"kannada",
+	"nonetra"
+);
+
+$locations: (
+	"top",
+	"left",
+	"right",
+	"bottom",
+);
+
+$overflows: (
+	"visible",
+	"hidden",
+	"scroll",
+	"auto",
+);
+
+$positions: (
+	"static",
+	"relative",
+	"absolute",
+	"fixed",
+	"sticky",
+);
+
+$sides: (
+	"left",
+	"center",
+	"right",
+	"justify",
+);
+
+$sizes: (
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+);
+
+$spacer: 1;
+
+$widths-rem: (
+	"0": 0,
+	"1": $spacer * .25rem,
+	"2": $spacer * .5rem,
+	"3": $spacer * 1rem,
+	"4": $spacer * 1.5rem,
+	"5": $spacer * 2rem,
+	"10": $spacer * 10rem,
+	"auto": auto,
+);
+
+$widths-px: (
+	"0": 0,
+	"1": $spacer * 1px,
+	"2": $spacer * 2px,
+	"3": $spacer * 3px,
+	"4": $spacer * 4px,
+	"5": $spacer * 5px,
+);

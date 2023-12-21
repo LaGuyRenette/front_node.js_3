@@ -1,0 +1,21 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.table {
+	border-collapse: collapse;
+	margin: 0 auto;
+	overflow-x: scroll;
+	height: 10vh;
+	width: 100%;
+	font-size: 1rem;
+	/* &-head {
+		top: 0;
+		vertical-align: bottom;
+	} */
+	&-row {
+		height: 2rem;
+	}
+	&-row:not(:last-child) {
+		border-bottom: solid 1px map-get($colors, 'dark');
+	}
+}

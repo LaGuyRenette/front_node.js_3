@@ -1,0 +1,7 @@
+.z-ind {
+	@for $i from 0 through 100 {
+		&-#{$i} {
+			z-index: $i;
+		}
+	}
+}

@@ -10,7 +10,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CrudFurnitureComponent } from './crud-furniture/crud-furniture.component'
+import { HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { DetailMaterialComponent } from './detail-material/detail-material.component';
 
 
 @NgModule({
@@ -18,6 +23,7 @@ import { CrudFurnitureComponent } from './crud-furniture/crud-furniture.componen
     LoginComponent,
     DashboardComponent,
     CrudFurnitureComponent,
+    DetailMaterialComponent,
 
   ],
   imports: [
@@ -29,7 +35,11 @@ import { CrudFurnitureComponent } from './crud-furniture/crud-furniture.componen
     MatDatepickerModule,
     MatTableModule, 
     MatCardModule,
-    MatIconModule
+    MatIconModule, 
+    ReactiveFormsModule,
+    HttpClientModule, 
+    MatFormFieldModule,
+    MatSelectModule,
     
   ]
 })

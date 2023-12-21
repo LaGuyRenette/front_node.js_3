@@ -1,0 +1,74 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.btn {
+	@each $color-key, $color-value in $colors {
+		&-#{$color-key} {
+			@include button("none", $color-key);
+			font-size: 1rem;
+			transition: transform .05s linear, box-shadow .05s linear, background-color .05s linear, border-color .05s linear;
+			&:hover:not(:disabled) {
+				transform: scale(1.01);
+				box-shadow: 2px 2px 2px map-get($colors, "dark");
+				background-color: darken-color(map-get($colors, $color-key), 20%);
+				border-color: darken-color(map-get($colors, $color-key), 20%);
+			}
+		}
+		&-outline-#{$color-key} {
+			font-size: 1rem;
+			@include button("outline", $color-key);
+			transition: transform .05s linear, box-shadow .05s linear, background-color .05s linear;
+			&:hover:not(:disabled) {
+				transform: scale(1.01);
+				box-shadow: 2px 2px 2px map-get($colors, "dark");
+				color: map-get($colors, "fade-white");
+				background-color: map-get($colors, $color-key);
+			}
+		}
+	}
+}
+
+.control-group > .btn {
+	@each $color-key, $color-value in $colors {
+		&-#{$color-key} {
+			font-size: 1rem;
+			@include button("none", $color-key);
+			transition: transform .05s linear, box-shadow .05s linear, background-color .05s linear, border-color .05s linear;
+			&:hover:not(:disabled) {
+				transform: scale(1.01);
+				box-shadow: 2px 2px 2px map-get($colors, "dark");
+				background-color: darken-color(map-get($colors, $color-key), 20%);
+				border-color: darken-color(map-get($colors, $color-key), 20%);
+			}
+			&:not(:first-child):not(:last-child) {
+				border-radius: 0;
+			}
+			&:first-child {
+				border-radius: .375rem 0 0 .375rem;
+			}
+			&:last-child {
+				border-radius: 0 .375rem .375rem 0;
+			}
+		}
+		&-outline-#{$color-key} {
+			font-size: 1rem;
+			@include button("outline", $color-key);
+			transition: transform .05s linear, box-shadow .05s linear, background-color .05s linear;
+			&:hover:not(:disabled) {
+				transform: scale(1.01);
+				box-shadow: 2px 2px 2px map-get($colors, "dark");
+				color: map-get($colors, "fade-white");
+				background-color: map-get($colors, $color-key);
+			}
+			&:not(:first-child):not(:last-child) {
+				border-radius: 0;
+			}
+			&:first-child {
+				border-radius: .375rem 0 0 .375rem;
+			}
+			&:last-child {
+				border-radius: 0 .375rem .375rem 0;
+			}
+		}
+	}
+}

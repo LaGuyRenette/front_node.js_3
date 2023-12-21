@@ -1,0 +1,13 @@
+.example-card {
+    max-width: 400px;
+  }
+.container-metal{
+    display: flex;
+    gap: 10px;
+}
+.mat-mdc-card {
+    --mdc-elevated-card-container-color: #9ba0b1;
+}
+.mat-mdc-card-subtitle {
+    color: #080808
+}
