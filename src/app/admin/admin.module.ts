@@ -24,7 +24,6 @@ import { DetailMaterialComponent } from './detail-material/detail-material.compo
     DashboardComponent,
     CrudFurnitureComponent,
     DetailMaterialComponent,
-
   ],
   imports: [
     CommonModule,

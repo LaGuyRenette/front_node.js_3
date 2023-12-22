@@ -1,100 +1,35 @@
 <h2>Matériaux utilisés</h2>
 
-<h3>Fer</h3>
-<p>Fournisseur: MetaLo</p>
+<h3>{{ metal.length > 1 ? "Métaux" : "Métal" }}</h3>
 <div class="container-metal">
-<mat-card class="example-card">
+  <mat-card *ngFor="let elem of metal" class="example-card">
     <mat-card-header>
-      <mat-card-title>Aluminium</mat-card-title>
-      <mat-card-subtitle>Fer</mat-card-subtitle>
+      <mat-card-title>{{ elem["name"].charAt(0).toUpperCase() + elem["name"].slice(1) }}</mat-card-title>
+      <mat-card-subtitle>Métal</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>fournisseur: MetaLo</p>
-      <p>description de l'aluminium</p>
+      <p>fournisseur: {{ elem["provider"] }}</p>
+      <p>{{ elem["description"] }}</p>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="goToStat()">Voir les statitiques</button>
+    <mat-card-actions *ngIf="isLogged">
+      <button mat-button (click)="goToStat(elem)">Voir les statitiques</button>
     </mat-card-actions>
   </mat-card>
-
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>Inox</mat-card-title>
-      <mat-card-subtitle>Fer</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>fournisseur: MetaLo</p>
-      <p>description de l'Inox</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="goToStat()">Voir les statitiques</button>
-    </mat-card-actions>
-  </mat-card>
-
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>Acier</mat-card-title>
-      <mat-card-subtitle>Fer</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>fournisseur: MetaLo</p>
-      <p>description de l'Acier</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="goToStat()">Voir les statitiques</button>
-    </mat-card-actions>
-  </mat-card>
-
 </div>
 
-<p>en cliquant sur le bouton voir les statistiques (visible que si on est coonecté en temps qu'admin) on est dirigé vers une page statitique:
-    -nombre de fois que le matériaux a été utilisé  en tout
-    -dans quel mobilier on le retrouve 
-    -les différentes dates de création (pour savoir quand il a été utilisé) </p>
-
 <h3>Bois</h3>
-<p>Fournisseur: BBois</p>
 <div class="container-metal">
-<mat-card class="example-card">
+  <mat-card *ngFor="let elem of wood" class="example-card">
     <mat-card-header>
-      <mat-card-title>Chêne</mat-card-title>
+      <mat-card-title>{{ elem["name"].charAt(0).toUpperCase() + elem["name"].slice(1) }}</mat-card-title>
       <mat-card-subtitle>Bois</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>fournisseur: BBois</p>
-      <p>description du Chêne</p>
+      <p>fournisseur: {{ elem["provider"] }}</p>
+      <p>{{ elem["description"] }}</p>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="goToStat()">Voir les statitiques</button>
-    </mat-card-actions>
-  </mat-card>
-
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>Frêne</mat-card-title>
-      <mat-card-subtitle>Bois</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>fournisseur: BBois</p>
-      <p>description du Frêne</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="goToStat()">Voir les statitiques</button>
-    </mat-card-actions>
-  </mat-card>
-
-
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>Noyer</mat-card-title>
-      <mat-card-subtitle>Bois</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>fournisseur: BBois</p>
-      <p>description du Noyer</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="goToStat()">Voir les statitiques</button>
+    <mat-card-actions *ngIf="isLogged">
+      <button mat-button (click)="goToStat(elem)">Voir les statitiques</button>
     </mat-card-actions>
   </mat-card>
 </div>
@@ -102,17 +37,19 @@
 
 
 <h3>Plastique</h3>
-<p>Fournisseur:  pPlastique</p>
-<mat-card class="example-card">
+<div class="container-plastic">
+  <mat-card *ngFor="let elem of plastic" class="example-card">
     <mat-card-header>
-      <mat-card-title>Plastique</mat-card-title>
+      <mat-card-title>{{ elem["name"].charAt(0).toUpperCase() + elem["name"].slice(1) }}</mat-card-title>
       <mat-card-subtitle>Plastique</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>fournisseur: pPlastique</p>
-      <p>description du Plastique</p>
+      <p>fournisseur: {{ elem["provider"] }}</p>
+      <p>{{ elem["description"] }}</p>
+      
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="goToStat()">Voir les statitiques</button>
+    <mat-card-actions *ngIf="isLogged">
+      <button mat-button (click)="goToStat(elem)">Voir les statitiques</button>
     </mat-card-actions>
   </mat-card>
+</div>

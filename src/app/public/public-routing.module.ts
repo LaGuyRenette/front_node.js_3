@@ -4,12 +4,14 @@ import { HomeComponent } from './home/home.component';
 import { FurnitureComponent } from './furniture/furniture.component';
 import { MaterialComponent } from './material/material.component';
 import { ListFurnitureComponent } from './list-furniture/list-furniture.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'furniture', component : FurnitureComponent},
   { path: 'material', component: MaterialComponent},
-  { path: 'furnitureList', component: ListFurnitureComponent}
+  { path: 'furnitureList', component: ListFurnitureComponent},
+  { path: '**' , component: NotFoundComponent}
 ];
 
 @NgModule({

@@ -10,6 +10,8 @@ import { PublicModule } from './public/public.module';
 import { HeaderComponent } from './shared/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { NavComponent } from './shared/nav/nav.component';
+import { CredentialsInterceptor } from './interceptors/credentials.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,7 +30,7 @@ import { NavComponent } from './shared/nav/nav.component';
     MatIconModule
     
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: CredentialsInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

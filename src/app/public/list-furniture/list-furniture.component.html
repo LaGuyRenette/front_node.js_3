@@ -1,161 +1,47 @@
-<div *ngIf="selectedCategory === 'Cupboard'">
+<div *ngIf="selectedCategory === 'cupboard'">
 <h3>Nos Armoires</h3>
 <mat-grid-list cols="2" rowHeight="2:2.5">
-    <mat-grid-tile>
-
+  
+    <mat-grid-tile *ngFor="let furniture of furnitureList">
         <mat-card class="example-card">
             <mat-card-header>
-              <mat-card-title>ALPHA</mat-card-title>
-              <mat-card-subtitle>Armoire</mat-card-subtitle>
+              <mat-card-title>{{ furniture.name }}</mat-card-title>
+              <mat-card-subtitle>{{ furniture.category }}</mat-card-subtitle>
             </mat-card-header>
             <img mat-card-image class="card-image" src="assets/pictures/cedb5a2c9fab0d55c88bb1d662cdc07c.jpg" alt="cannage">
             <mat-card-content>
               <p>
-                Une armoire contemporaine, alliant élégance et durabilité, conçue en plastique de haute qualité, en frêne naturel et en acier robuste.
-                Son design moderne s'harmonise parfaitement avec une construction solide, offrant un meuble fonctionnel et esthétique. 
+                {{ furniture.description }}
               </p>
             </mat-card-content>
             <mat-card-actions>
               <button mat-button (click)="goToFurniture()">VOIR</button>
             </mat-card-actions>
           </mat-card>
-
-    </mat-grid-tile>
-    <mat-grid-tile> 
-        <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>BETA</mat-card-title>
-              <mat-card-subtitle>Armoire</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image class="card-image" src="assets/pictures/8f5655e14115fe5538b72599726c03c9.jpg" alt="cannage">
-            <mat-card-content>
-              <p>
-                Une armoire contemporaine, alliant élégance et durabilité, conçue en plastique de haute qualité, en frêne naturel et en acier robuste.
-                Son design moderne s'harmonise parfaitement avec une construction solide, offrant un meuble fonctionnel et esthétique. 
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button (click)="goToFurniture()">VOIR</button>
-            </mat-card-actions>
-          </mat-card>
-        </mat-grid-tile>
-
-    <mat-grid-tile>
-        <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>GAMMA</mat-card-title>
-              <mat-card-subtitle>Armoire</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image class="card-image" src="assets/pictures/dd6917abcea23c7b87353cd3aecaed36.jpg" alt="cannage">
-            <mat-card-content>
-              <p>
-                Une armoire contemporaine, alliant élégance et durabilité, conçue en plastique de haute qualité, en frêne naturel et en acier robuste.
-                Son design moderne s'harmonise parfaitement avec une construction solide, offrant un meuble fonctionnel et esthétique. 
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button (click)="goToFurniture()">VOIR</button>
-            </mat-card-actions>
-          </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>DELTA</mat-card-title>
-              <mat-card-subtitle>Armoire</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image class="card-image" src="assets/pictures/cfbb833145eb3f725b896de18b89f678.jpg" alt="cannage">
-            <mat-card-content>
-              <p>
-                Une armoire contemporaine, alliant élégance et durabilité, conçue en plastique de haute qualité, en frêne naturel et en acier robuste.
-                Son design moderne s'harmonise parfaitement avec une construction solide, offrant un meuble fonctionnel et esthétique. 
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button (click)="goToFurniture()">VOIR</button>
-            </mat-card-actions>
-          </mat-card>
-    </mat-grid-tile>
+      </mat-grid-tile>
   </mat-grid-list>
-
 </div>
-<div *ngIf="selectedCategory === 'Shelf'">
+
+
+<div *ngIf="selectedCategory === 'shelf'">
 <h3>Nos Étagères</h3>
 <mat-grid-list cols="2" rowHeight="2:2.5">
-    <mat-grid-tile>
-
-        <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>ALPHA</mat-card-title>
-              <mat-card-subtitle>Étagère</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image class="card-image" src="assets/pictures/1c1e60e50e39cb94c4c556546b2fc40f.jpg" alt="cannage">
-            <mat-card-content>
-              <p>
-                Une Étagère contemporaine, alliant élégance et durabilité, conçue en plastique de haute qualité, en frêne naturel et en acier robuste.
-                Son design moderne s'harmonise parfaitement avec une construction solide, offrant un meuble fonctionnel et esthétique. 
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button (click)="goToFurniture()">VOIR</button>
-            </mat-card-actions>
-          </mat-card>
-
-    </mat-grid-tile>
-    <mat-grid-tile> 
-        <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>BETA</mat-card-title>
-              <mat-card-subtitle>Étagère</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image class="card-image" src="assets/pictures/5b03b60e4821b35c84944f91742c0037.jpg" alt="cannage">
-            <mat-card-content>
-              <p>
-                Une Étagère contemporaine, alliant élégance et durabilité, conçue en plastique de haute qualité, en frêne naturel et en acier robuste.
-                Son design moderne s'harmonise parfaitement avec une construction solide, offrant un meuble fonctionnel et esthétique. 
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button (click)="goToFurniture()">VOIR</button>
-            </mat-card-actions>
-          </mat-card>
-        </mat-grid-tile>
-
-    <mat-grid-tile>
-        <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>GAMMA</mat-card-title>
-              <mat-card-subtitle>Étagère</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image class="card-image" src="assets/pictures/dd6917abcea23c7b87353cd3aecaed36.jpg" alt="cannage">
-            <mat-card-content>
-              <p>
-                Une Étagère contemporaine, alliant élégance et durabilité, conçue en plastique de haute qualité, en frêne naturel et en acier robuste.
-                Son design moderne s'harmonise parfaitement avec une construction solide, offrant un meuble fonctionnel et esthétique. 
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button (click)="goToFurniture()">VOIR</button>
-            </mat-card-actions>
-          </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>DELTA</mat-card-title>
-              <mat-card-subtitle>Étagère</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image class="card-image" src="assets/pictures/cfbb833145eb3f725b896de18b89f678.jpg" alt="cannage">
-            <mat-card-content>
-              <p>
-                Une Étagère contemporaine, alliant élégance et durabilité, conçue en plastique de haute qualité, en frêne naturel et en acier robuste.
-                Son design moderne s'harmonise parfaitement avec une construction solide, offrant un meuble fonctionnel et esthétique. 
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button (click)="goToFurniture()">VOIR</button>
-            </mat-card-actions>
-          </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <mat-grid-tile *ngFor="let furniture of furnitureList">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{ furniture.name }}</mat-card-title>
+          <mat-card-subtitle>{{ furniture.category }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="card-image" src="assets/pictures/cedb5a2c9fab0d55c88bb1d662cdc07c.jpg" alt="cannage">
+        <mat-card-content>
+          <p>
+            {{ furniture.description }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="goToFurniture()">VOIR</button>
+        </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
 </div>

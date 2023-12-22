@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FurnitureService } from 'src/app/services/furniture/furniture.service';
 
 @Component({
   selector: 'app-crud-furniture',
@@ -10,12 +11,14 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CrudFurnitureComponent implements OnInit {
   furnitureForm!: FormGroup;
-  constructor(private fb: FormBuilder, private http: HttpClient){}
-  //service a appeler pour les méthodes http
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient, 
+    private furnitureService: FurnitureService){}
  
 ngOnInit(): void {
   this.initForm();
-  //recuperer les données de matériaux
+
 }
 initForm(){
   this.furnitureForm= this.fb.group({
@@ -48,16 +51,17 @@ get materials(): FormArray{
     this.materials.removeAt(materialIndex);
 }
   onSubmit() {
-    // const apiEndpoin = '/Artisan/furniture';
-    // const formData= this.furnitureForm.value;
-
-    // this.http.post(apiEndpoin, formData).subscribe(
-    //   (response) => {
-    //     console.log('yes!form submitted',response);
-    //   },
-    //   (error)=> {
-    //     console.error('oups', error);
-    //   }
-    //);
+     if (this.furnitureForm.valid) {
+      this.furnitureService.post(this.furnitureForm).subscribe(
+        (response) => {
+          console.log('Meuble ajouté avec succès', response);
+        },
+        (error) => {
+          console.error('Erreur lors de l\'ajout du meuble', error);
+        }
+      );
+    } else {
+      console.error('Le formulaire n\'est pas valide.');
+    }
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 export interface FurnitureElement {
@@ -26,7 +27,19 @@ const FURNITURE: FurnitureElement[] = [
   styleUrls: ['./detail-material.component.scss']
 })
 export class DetailMaterialComponent {
-
+  detailMaterial: any;
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+    ) {
+    if (this.router.getCurrentNavigation().extras.state) {
+      this.detailMaterial = this.router.getCurrentNavigation().extras.state["data"];
+    console.log(this.detailMaterial);
+    } else {
+      this.router.navigate(["/material"]);
+    }
+    
+  }
 
   displayedColumns: string[] = ['name', 'quantity_material', 'price_material', 'quantity_furniture', 'price_furniture', 'date'];
   dataSource = FURNITURE;

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FurnitureService } from 'src/app/services/furniture/furniture.service';
 
 @Component({
   selector: 'app-furniture',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./furniture.component.scss']
 })
 export class FurnitureComponent {
-
+constructor(
+  private furnitureService: FurnitureService
+  ){}
 }

@@ -1,16 +1,19 @@
 <h2>Bienvenue</h2>
-<form>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <p *ngIf="feedback">{{ feedback }}</p>
+  
     <!-- Email input -->
     <div class="form-outline mb-4">
-      <input type="email" id="form2Example1" class="form-control" />
+      <input formControlName="email" type="email" id="form2Example1" class="form-control" />
       <label class="form-label" for="form2Example1">Adresse mail</label>
     </div>
   
     <!-- Password input -->
     <div class="form-outline mb-4">
-      <input type="password" id="form2Example2" class="form-control" />
+      <input formControlName="password" type="password" id="form2Example2" class="form-control" />
       <label class="form-label" for="form2Example2">Mot de passe</label>
     </div>
     <!-- Submit button -->
-    <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
-  </form>
+    <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="loginForm.invalid">Sign in</button>
+</form>
