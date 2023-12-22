@@ -27,15 +27,15 @@ export class FurnitureService {
     
     filterByMaterials(materials: string[]): Observable<any> {
     const queryString = materials.join("&");
-    return this.http.get(`${environment.API}/furniture?${queryString}`);
+    return this.http.get(`${environment.API}furniture?${queryString}`);
     }
     
     post(newFurniture: FormGroup): Observable<any> {
-    return this.http.post(`${environment.API}/furniture`, newFurniture);
+    return this.http.post(`${environment.API}furniture`, newFurniture);
     }
     
-    put(data: FormGroup): Observable<any> {
-    return this.http.put(`${environment.API}/furniture`, data);
+    put(furnitureId: string, data: FormGroup): Observable<any> {
+    return this.http.put(`${environment.API}furniture/${furnitureId}`, data);
     }
     
     delete(furnitureId: string): Observable<any> {

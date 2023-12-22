@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatCalendar, MatCalendarCellCssClasses } from '@angular/material/datepicker';
 import { FurnitureService } from 'src/app/services/furniture/furniture.service';
+import { MaterialsService } from 'src/app/services/materials/materials.service';
 
 
 export interface FurnitureElement {
@@ -24,14 +25,25 @@ export class DashboardComponent {
   displayedColumns: string[] = ['name', 'category', 'price', 'quantity', 'date'];
   dataSource: FurnitureElement[] = [];
   selectedDate: Date[] = [];
-
+  pieChartData: object[] = [];
   @ViewChild(MatCalendar) calendar: MatCalendar<Date>;
 
+
+  viewPC: [number, number] = [700, 400];
+  animationPC = true;
+  colorSchemePC = "vivid";
+  labelsPC = true;
+  doughnut = true;
+
+ 
+
   constructor(
-    private furnitureService: FurnitureService
+    private furnitureService: FurnitureService,
+    private materialsService: MaterialsService,
   ) 
   {
       this.getFurniture();
+      this.getMaterials();
     };
   
   getFurniture() {
@@ -55,6 +67,20 @@ export class DashboardComponent {
     },
       error: (error) => console.error('Le format des données est incorrect.'),
     });
+    
+  }
+  getMaterials(){
+    this.materialsService.all().subscribe({
+      next: (res: any) => {
+        this.pieChartData = res.materials.map((materials: any) => {
+          const name = materials.name;
+          const value = materials.totalQuantity;
+
+          return { name, value };
+        })
+      },
+      error: (error) => console.error(error),
+    })
   }
 
   dateClass(date: Date): MatCalendarCellCssClasses {
@@ -65,14 +91,11 @@ export class DashboardComponent {
   
     return isFurnitureDate ? 'special-date' : '';
   }
-//   datamaterials = this.furnitureService.filterByMaterials;
-//    viewPC: [number, number] = [700, 400];
-//    animationPC = true;
-//     colorSchemePC = "vivid";
-//   labelsPC = true;
-//    doughnut = true;
+  percentageFormatterPC(datamaterials: any): string {
 
-//    percentageFormatterPC(data: any): string {
-//     return data.value + "%";
-//   }
+    console.log(datamaterials['totalQuantity'])
+    return datamaterials['totalQuantity'] + "%";
+    
+  }
+
 }

@@ -6,5 +6,5 @@
     <h4 (click)="goToDashboard()">Dashboard</h4>
     <p (click)="goToLoginPage()" *ngIf="!isLogged"><mat-icon >person</mat-icon>Login</p>
     <p (click)="logout()" *ngIf="isLogged"><mat-icon>person</mat-icon>Logout</p>
-    <p (click)="goToCrudPage()"><mat-icon >add</mat-icon>Mobilier</p>
+    <p (click)="goToCrudPage()" *ngIf="isLogged"><mat-icon >add</mat-icon>Mobilier</p>
     </nav>
