@@ -15,7 +15,7 @@ export class NavComponent {
     private router: Router,
     private authService: AuthService,
   ) {
-    // this.authService.isLoggedEmitter.subscribe(res => this.isLogged = res);
+    this.authService.isLoggedEmitter.subscribe(res => this.isLogged = res);
   }
 
   logout() {

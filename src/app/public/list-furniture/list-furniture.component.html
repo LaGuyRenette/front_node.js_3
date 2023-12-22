@@ -1,47 +1,21 @@
-<div *ngIf="selectedCategory === 'cupboard'">
-<h3>Nos Armoires</h3>
+<h3>Nos {{ selectedCategory === "shelf" ? "étagères" : "armoires" }}</h3>
 <mat-grid-list cols="2" rowHeight="2:2.5">
-  
-    <mat-grid-tile *ngFor="let furniture of furnitureList">
-        <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>{{ furniture.name }}</mat-card-title>
-              <mat-card-subtitle>{{ furniture.category }}</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image class="card-image" src="assets/pictures/cedb5a2c9fab0d55c88bb1d662cdc07c.jpg" alt="cannage">
-            <mat-card-content>
-              <p>
-                {{ furniture.description }}
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button (click)="goToFurniture()">VOIR</button>
-            </mat-card-actions>
-          </mat-card>
-      </mat-grid-tile>
-  </mat-grid-list>
-</div>
 
-
-<div *ngIf="selectedCategory === 'shelf'">
-<h3>Nos Étagères</h3>
-<mat-grid-list cols="2" rowHeight="2:2.5">
   <mat-grid-tile *ngFor="let furniture of furnitureList">
     <mat-card class="example-card">
-        <mat-card-header>
-          <mat-card-title>{{ furniture.name }}</mat-card-title>
-          <mat-card-subtitle>{{ furniture.category }}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image class="card-image" src="assets/pictures/cedb5a2c9fab0d55c88bb1d662cdc07c.jpg" alt="cannage">
-        <mat-card-content>
-          <p>
-            {{ furniture.description }}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button (click)="goToFurniture()">VOIR</button>
-        </mat-card-actions>
-      </mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ furniture.name }}</mat-card-title>
+        <mat-card-subtitle>{{ furniture.category }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image class="card-image" src="assets/pictures/cedb5a2c9fab0d55c88bb1d662cdc07c.jpg" alt="cannage">
+      <mat-card-content>
+        <p>
+          {{ furniture.description }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="goToFurniture(furniture)">VOIR</button>
+      </mat-card-actions>
+    </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
-</div>

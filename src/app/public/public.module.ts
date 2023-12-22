@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
   imports: [
     CommonModule,
     PublicRoutingModule,
+    MatTableModule,
     MatCardModule,
     MatButtonModule,
     MatGridListModule

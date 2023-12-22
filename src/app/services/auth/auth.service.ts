@@ -1,15 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {constructor(
-  private http: HttpClient,
+export class AuthService {
+  isLoggedEmitter: EventEmitter<boolean> = new EventEmitter();
+  
+  constructor(
+    private http: HttpClient,
   ) { }
   
   login(credentials: FormGroup): Observable<any> {
@@ -19,11 +22,11 @@ export class AuthService {constructor(
   logout(): Observable<any> {
     return this.http.get(`${environment.API}logout`);
   }
-  isLoggedEmitter(){
-  }
 
-  
   me(): Observable<any> {
-    return this.http.get(`${environment.API}me`);
+    return this.http.get(`${environment.API}me`)
+      .pipe(
+        tap(res => this.isLoggedEmitter.emit(res))
+      );
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { FurnitureService } from 'src/app/services/furniture/furniture.service';
 
 @Component({
@@ -24,8 +24,13 @@ export class ListFurnitureComponent {
     });
   }
 
-  goToFurniture() {
-    this.router.navigate(['/furniture']);
+  goToFurniture(furniture: object) {
+    const navExtra: NavigationExtras = {
+      state: {
+        data: furniture
+      }
+    }
+    this.router.navigate(['/furniture'], navExtra);
   }
   getFurniture() {
     this.furnitureList = [];

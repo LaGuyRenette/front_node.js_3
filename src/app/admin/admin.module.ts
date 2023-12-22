@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { DetailMaterialComponent } from './detail-material/detail-material.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { DetailMaterialComponent } from './detail-material/detail-material.compo
     HttpClientModule, 
     MatFormFieldModule,
     MatSelectModule,
+    NgxChartsModule,
     
   ]
 })

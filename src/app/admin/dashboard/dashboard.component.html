@@ -1,10 +1,21 @@
 <h2>Dashboard</h2>
 <h4>Date des commandes</h4>
 <mat-card class="demo-inline-calendar-card">
-    <mat-calendar></mat-calendar>
+  <mat-calendar [dateClass]="dateClass"></mat-calendar>
   </mat-card>
-<h4>Les Mobiliers </h4>
-<!-- Chart.js : Bois acier et plastique avec line chart-->
+
+   <!-- <ngx-charts-pie-chart
+  [results]="datamaterials"
+  [view]="viewPC"
+  [animations]="animationPC"
+  [scheme]="colorSchemePC"
+  [labels]="labelsPC"
+  [doughnut]="doughnut"
+  [tooltipText]="percentageFormatterPC"
+></ngx-charts-pie-chart> -->
+
+<h4>Mes Commandes de Mobiliers </h4>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <ng-container matColumnDef="name">

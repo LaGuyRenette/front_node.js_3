@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NavComponent } from './shared/nav/nav.component';
 import { CredentialsInterceptor } from './interceptors/credentials.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     BrowserAnimationsModule,
     NgbModule,
     PublicModule,
-    MatIconModule
+    MatIconModule,
+    NgxChartsModule,
     
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: CredentialsInterceptor, multi: true },],
