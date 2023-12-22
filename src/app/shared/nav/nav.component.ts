@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -8,7 +9,20 @@ import { Router } from '@angular/router';
 })
 
 export class NavComponent {
-  constructor(private router: Router){}
+  isLogged: boolean = false;
+
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+  ) {
+    // this.authService.isLoggedEmitter.subscribe(res => this.isLogged = res);
+  }
+
+  logout() {
+    this.authService.logout().subscribe();
+    this.router.navigate(["/"]);
+    this.isLogged = false;
+  }
   
   goToLoginPage(){
     this.router.navigate(['/login']);

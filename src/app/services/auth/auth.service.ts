@@ -19,6 +19,8 @@ export class AuthService {constructor(
   logout(): Observable<any> {
     return this.http.get(`${environment.API}logout`);
   }
+  isLoggedEmitter(){
+  }
 
   
   me(): Observable<any> {

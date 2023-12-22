@@ -1,9 +1,10 @@
 <nav>
-<h4>Categories</h4>
-<p (click)="goToListFurniture('cupboard')">Armoire</p>
-<p (click)="goToListFurniture('shelf')">Étagère</p>
-<h4 (click)="goToMaterials()">Materiaux</h4>
-<h4 (click)="goToDashboard()">Dashboard</h4>
-<p (click)="goToLoginPage()"><mat-icon >person</mat-icon>Logout</p>
-<p (click)="goToCrudPage()"><mat-icon >add</mat-icon>Mobilier</p>
-</nav>
+    <h4>Categories</h4>
+    <p (click)="goToListFurniture('cupboard')">Armoire</p>
+    <p (click)="goToListFurniture('shelf')">Étagère</p>
+    <h4 (click)="goToMaterials()">Materiaux</h4>
+    <h4 (click)="goToDashboard()">Dashboard</h4>
+    <p (click)="goToLoginPage()" *ngIf="!isLogged"><mat-icon >person</mat-icon>Login</p>
+    <p (click)="logout()" *ngIf="isLogged"><mat-icon>person</mat-icon>Logout</p>
+    <p (click)="goToCrudPage()"><mat-icon >add</mat-icon>Mobilier</p>
+    </nav>

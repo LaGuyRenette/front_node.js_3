@@ -1,11 +1,9 @@
-<h2>*Nom de la matiere*</h2>
-<h4>Nom du Fournisseurs</h4>
-<p>type de materiaux</p>
-<h4>Date d'utilisation de *Nom de la matiere*</h4>
+<h2>Dashboard</h2>
+<h4>Date des commandes</h4>
 <mat-card class="demo-inline-calendar-card">
     <mat-calendar></mat-calendar>
   </mat-card>
-<h4>Dans quel mobilier retrouver ce materiau ?</h4>
+<h4>Les Mobiliers </h4>
 <!-- Chart.js : Bois acier et plastique avec line chart-->
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -14,25 +12,20 @@
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="quantity_material">
-      <th mat-header-cell *matHeaderCellDef> Quantité </th>
-      <td mat-cell *matCellDef="let element"> {{element.quantity_material}} </td>
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef> Category </th>
+      <td mat-cell *matCellDef="let element"> {{element.category}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="price_material">
-        <th mat-header-cell *matHeaderCellDef> Prix de la matière </th>
-        <td mat-cell *matCellDef="let element"> {{element.price_material}} </td>
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Prix </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
       </ng-container>
 
-    <ng-container matColumnDef="quantity_furniture">
+    <ng-container matColumnDef="quantity">
         <th mat-header-cell *matHeaderCellDef> quantité </th>
-        <td mat-cell *matCellDef="let element"> {{element.quantity_furniture}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
       </ng-container>
-
-    <ng-container matColumnDef="price_furniture">
-      <th mat-header-cell *matHeaderCellDef> Prix du mobilier </th>
-      <td mat-cell *matCellDef="let element"> {{element.price_furniture}} </td>
-    </ng-container>
   
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef> Date </th>
