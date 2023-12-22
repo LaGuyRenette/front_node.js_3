@@ -25,7 +25,6 @@ export class CrudFurnitureComponent {
       name: ['', [Validators.required]],
       category: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      //pictures: [''],
       price: ['', [Validators.required, Validators.min(0)]],
       quantity: ['', [Validators.required, Validators.min(0)]],
       components: this.fb.array([]),
@@ -87,6 +86,9 @@ export class CrudFurnitureComponent {
         error: (error) => {
           console.error("Erreur lors de l'ajout du meuble", error);
         },
+        complete: () => {
+          this.router.navigate(["/dashboard"]);
+        }
       });
     } else if (this.method === "put") {
       this.furnitureService.put(this.id, this.furnitureForm.value).subscribe({

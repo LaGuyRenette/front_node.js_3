@@ -70,12 +70,12 @@ export class DashboardComponent {
     
   }
   getMaterials(){
+
     this.materialsService.all().subscribe({
       next: (res: any) => {
         this.pieChartData = res.materials.map((materials: any) => {
           const name = materials.name;
           const value = materials.totalQuantity;
-
           return { name, value };
         })
       },
@@ -92,10 +92,9 @@ export class DashboardComponent {
     return isFurnitureDate ? 'special-date' : '';
   }
   percentageFormatterPC(datamaterials: any): string {
-
-    console.log(datamaterials['totalQuantity'])
-    return datamaterials['totalQuantity'] + "%";
-    
+  
+    return datamaterials["value"];
   }
+
 
 }
